@@ -14,15 +14,10 @@ while (i < words.length) {
   const direction = word[0];
   const amount = Number(word.slice(1));
 
-  if (direction === "L") {
-    Currpointing = (Currpointing - amount + 100) % 100;
-  } else {
-    Currpointing = (Currpointing + amount) % 100;
-  }
-
-  if (Currpointing === 0) {
-    password += 1;
-  }
+    for (let step = 0; step < amount; step++) {
+        Currpointing = (Currpointing + (direction === "L" ? -1 : 1) + 100) % 100;
+        if (Currpointing === 0) password++;
+    }
 
   i++;
 }
