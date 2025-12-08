@@ -14,7 +14,6 @@ for(let b=0;b < banks.length;b++){
     
     let section = banks[b]
     if (section.length === 0) continue; 
-    console.log("BANK:", section.join(""), "LEN:", section.length);
 
     let bestValueForBank = 0
     for (let i = 0; i <= section.length - 2; i++) {
